@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -9,16 +9,18 @@ import ArrayData from "./ArrayData";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { data1 } from "./App";
+import { data2 } from "./App";
+import { data3 } from "./App";
 
 const Home = () => {
   const obj = { id: null, title: "", content: "" };
-  const editobj = { id: null, title: "", content: "", day: "" };
   const [forms, setValue] = useState(obj);
   const navigate = useNavigate();
   const location = useLocation();
   const data = location.state;
-  const [editdata, editData] = useState(editobj);
   const [values, setValues] = useContext(data1);
+  const [addBtn, addBtnValues] = useContext(data2);
+  const [editBtn, editBtnValues] = useContext(data3);
 
   if (data != null) {
     obj.title = data.title;
@@ -32,6 +34,7 @@ const Home = () => {
   };
   const handleAdd = (event) => {
     event.preventDefault();
+
     if (forms.title != "" && forms.content != "") {
       ArrayData.push({
         title: forms.title,
@@ -39,11 +42,12 @@ const Home = () => {
         day: " 1 days ago",
         id: ArrayData.length + 1,
       });
+
       console.log(ArrayData, "ArrayData Add");
       setValues(values);
       navigate("/note");
     } else {
-      console.log("else");
+      console.log("else -> add data is empty");
     }
   };
 
@@ -98,6 +102,7 @@ const Home = () => {
           <Button
             variant="success"
             type="submit"
+            disabled={addBtn}
             onClick={() => handleAdd(event)}
           >
             Add data
@@ -106,6 +111,7 @@ const Home = () => {
           <Button
             variant="success"
             type="submit"
+            disabled={editBtn}
             onClick={() => handleupdate(event)}
           >
             Update data

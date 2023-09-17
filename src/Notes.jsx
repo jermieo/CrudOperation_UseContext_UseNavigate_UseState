@@ -6,8 +6,14 @@ import "./App.css";
 import Button from "react-bootstrap/Button";
 import { useNavigate } from "react-router-dom";
 import { data1 } from "./App";
+import { data2 } from "./App";
+import { data3 } from "./App";
+
 const Notes = () => {
   const [values, setValues] = useContext(data1);
+  const [addBtn, addBtnValues] = useContext(data2);
+  const [editBtn, editBtnValues] = useContext(data3);
+
   let navigate = useNavigate();
   const deletebtn = (e) => {
     setValues(
@@ -17,7 +23,10 @@ const Notes = () => {
     );
   };
   console.log(values, "delete data");
+
   const handle = (dataId) => {
+    addBtnValues(true);
+    editBtnValues(false);
     navigate("/", { state: dataId });
   };
 
