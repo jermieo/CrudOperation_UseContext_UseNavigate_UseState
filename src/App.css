@@ -2,14 +2,23 @@
   display: flex;
 }
 .sidebar{
-  width: 200px;
-  height: 1500px;
-  background-color: aqua;
+  width: 250px;
+  height: 100%;
+  background-color: black;
   text-decoration: none;
   text-align: center;
 }
 .sidebar :hover{
   background-color: darkblue;
+}
+.d-flex{
+  position: relative;
+  bottom: 70px;
+  left: 49px;
+}
+.border{
+  position: relative;
+   top: 20px;
 }
 
 

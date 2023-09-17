@@ -8,6 +8,8 @@ import { useNavigate } from "react-router-dom";
 import { data1 } from "./App";
 import { data2 } from "./App";
 import { data3 } from "./App";
+import { FaEdit } from "react-icons/fa";
+import { FaTrash } from "react-icons/fa";
 
 const Notes = () => {
   const [values, setValues] = useContext(data1);
@@ -33,8 +35,8 @@ const Notes = () => {
   return (
     <>
       <Container fluid>
-        <h3>My Notes</h3>
-        <h6>Recently viewed</h6>
+        <h3 className="text-center">My Notes</h3>
+        <h6 className="text-center">Recently viewed</h6>
         <Row>
           {values.map((value) => {
             return (
@@ -46,22 +48,28 @@ const Notes = () => {
                   }}
                 >
                   <Row className="fw-bold">
-                    {value.title}
+                    <div className="border" style={{ backgroundColor: "blue" }}>
+                      {value.title}
+                    </div>
                     <Row>
-                      <Button
-                        style={{ width: "70px" }}
-                        variant="success"
-                        onClick={() => handle(value)}
-                      >
-                        Edit
-                      </Button>
-                      <Button
-                        style={{ width: "70px" }}
-                        variant="danger"
-                        onClick={() => deletebtn(value)}
-                      >
-                        Delete
-                      </Button>
+                      <div className="d-flex">
+                        <Button
+                          style={{ width: "50px", height: "60px" }}
+                          variant="success"
+                          onClick={() => handle(value)}
+                        >
+                          <FaEdit />
+                          Edit
+                        </Button>
+                        <Button
+                          style={{ width: "70px", height: "60px" }}
+                          variant="danger"
+                          onClick={() => deletebtn(value)}
+                        >
+                          <FaTrash />
+                          Delete
+                        </Button>
+                      </div>
                     </Row>
                   </Row>
                   <Row>{value.content}</Row>

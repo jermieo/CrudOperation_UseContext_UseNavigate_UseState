@@ -39,7 +39,7 @@ const Home = () => {
       values.push({
         title: forms.title,
         content: forms.content,
-        day: " 1 days ago",
+        day: "5 day ago",
         id: ArrayData.length + 1,
       });
 
