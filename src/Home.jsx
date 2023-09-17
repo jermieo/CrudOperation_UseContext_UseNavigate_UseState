@@ -36,14 +36,14 @@ const Home = () => {
     event.preventDefault();
 
     if (forms.title != "" && forms.content != "") {
-      ArrayData.push({
+      values.push({
         title: forms.title,
         content: forms.content,
         day: " 1 days ago",
         id: ArrayData.length + 1,
       });
 
-      console.log(ArrayData, "ArrayData Add");
+      console.log(values, "ArrayData Add");
       setValues(values);
       navigate("/note");
     } else {
@@ -53,9 +53,10 @@ const Home = () => {
 
   const handleupdate = (event) => {
     event.preventDefault();
-    let updata = ArrayData.map((item) => (item.id === forms.id ? forms : item));
-    console.log(updata, "updata data");
-    setValues(updata);
+    setValues(values.map((item) => (item.id === forms.id ? forms : item)));
+    console.log(values, "updata data1");
+
+    // setValues(v1);
     navigate("/note");
   };
   return (
