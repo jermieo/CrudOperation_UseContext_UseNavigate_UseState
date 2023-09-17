@@ -1,0 +1,15 @@
+#root{
+  display: flex;
+}
+.sidebar{
+  width: 200px;
+  height: 1500px;
+  background-color: aqua;
+  text-decoration: none;
+  text-align: center;
+}
+.sidebar :hover{
+  background-color: darkblue;
+}
+
+
