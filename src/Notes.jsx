@@ -10,6 +10,7 @@ import { data2 } from "./App";
 import { data3 } from "./App";
 import { FaEdit } from "react-icons/fa";
 import { FaTrash } from "react-icons/fa";
+import { FaPortrait } from "react-icons/fa";
 
 const Notes = () => {
   const [values, setValues] = useContext(data1);
@@ -34,21 +35,36 @@ const Notes = () => {
 
   return (
     <>
-      <Container fluid>
-        <h3 className="text-center">My Notes</h3>
+      <Container
+        fluid
+        style={{ backgroundColor: "rgb(227, 232, 248)", paddingTop: "50px" }}
+      >
+        <h3 className="text-center">
+          <FaPortrait /> Notes
+        </h3>
         <h6 className="text-center">Recently viewed</h6>
         <Row>
           {values.map((value) => {
             return (
               <>
                 <Col
-                  className=" m-5 p-5 border rounded-3"
+                  className="m-5 p-5 border rounded-3"
                   style={{
-                    backgroundColor: "red",
+                    backgroundColor: "rgb(249, 247, 247)",
+                    boxShadow:
+                      "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
                   }}
                 >
                   <Row className="fw-bold">
-                    <div className="border" style={{ backgroundColor: "blue" }}>
+                    <div
+                      className="border"
+                      style={{
+                        color: "rgb(26, 25, 72)",
+                        backgroundColor: "red",
+                        boxShadow:
+                          "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+                      }}
+                    >
                       {value.title}
                     </div>
                     <Row>

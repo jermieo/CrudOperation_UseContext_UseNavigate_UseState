@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -11,6 +11,7 @@ import { useLocation } from "react-router-dom";
 import { data1 } from "./App";
 import { data2 } from "./App";
 import { data3 } from "./App";
+import "./App.css";
 
 const Home = () => {
   const obj = { id: null, title: "", content: "" };
@@ -61,10 +62,16 @@ const Home = () => {
   };
   return (
     <div>
-      <Container fluid>
+      <Container
+        style={{ backgroundColor: "rgb(227, 232, 248)", marginLeft: "220px" }}
+      >
         <Row
           className="m-5 p-4 text-capitalize border rounded-3"
-          style={{ backgroundColor: "red", width: "1500px" }}
+          style={{
+            backgroundColor: "rgb(249, 247, 247)",
+            boxShadow:
+              "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+          }}
         >
           <Col>
             <h3 className="text-center">Add a Note</h3>

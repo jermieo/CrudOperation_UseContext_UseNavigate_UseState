@@ -10,9 +10,16 @@ const SideBar = () => {
   const [addBtn, addBtnValues] = useContext(data2);
   return (
     <>
-      <div className="sidebar">
-        <h2 style={{ color: "rgb(223, 212, 212)" }}>Notes App</h2>
-        <div className="border border-5 border-danger">
+      <div className="sidebar fw-bold">
+        <h2 style={{ color: "rgb(26, 25, 72)", paddingTop: "40px" }}>
+          Notes App
+        </h2>
+        <div
+          style={{
+            boxShadow:
+              "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+          }}
+        >
           <NavLink
             to="/"
             style={{ textDecoration: "none" }}
@@ -26,7 +33,12 @@ const SideBar = () => {
           </NavLink>
         </div>
         <br />
-        <div className="border border-5 border-danger">
+        <div
+          style={{
+            boxShadow:
+              "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+          }}
+        >
           <NavLink to="/note" style={{ textDecoration: "none" }}>
             <FaBookOpen />
             Note
