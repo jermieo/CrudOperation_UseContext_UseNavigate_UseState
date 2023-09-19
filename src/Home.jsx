@@ -63,7 +63,11 @@ const Home = () => {
   return (
     <div>
       <Container
-        style={{ backgroundColor: "rgb(227, 232, 248)", marginLeft: "220px" }}
+        style={{
+          backgroundColor: "rgb(227, 232, 248)",
+          marginLeft: "220px",
+          marginTop: "220px",
+        }}
       >
         <Row
           className="m-5 p-4 text-capitalize border rounded-3"
@@ -126,6 +130,7 @@ const Home = () => {
           </Button>
         </div>
       </Container>
+      <div style={{ marginTop: "368px" }}></div>
     </div>
   );
 };
